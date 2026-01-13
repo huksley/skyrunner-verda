@@ -1,0 +1,25 @@
+#
+# Example job to run on Verda Cloud (formerly DataCrunch).
+# This will launch a cluster which will be autodeleted in 120 minutes and will run the training job on it.
+# 
+# $ mkdir -p ${HOME}/.verda 
+# $ echo { "client_id": "YOUR_CLIENT_ID", "client_secret": "YOUR_CLIENT_SECRET" } > ${HOME}/.verda/config.json
+# $ pip install skypilot[verda]
+# $ sky launch -i 120 train.yaml
+#
+name: minGPT-ddp
+
+resources:
+    cpus: 4+
+    accelerators: B200:1
+
+run: |
+    set -e
+    git clone --depth 1 https://github.com/pytorch/examples || true
+    cd examples/distributed/minGPT-ddp
+    git pull
+    uv venv --python 3.11
+    uv pip install -r requirements.txt "numpy<2" "torch" "torchvision" "torchrun" --extra-index-url https://download.pytorch.org/whl/cu126
+    export LOGLEVEL=INFO
+    echo "Starting minGPT-ddp training"
+    uv run torchrun --nproc_per_node=$SKYPILOT_NUM_GPUS_PER_NODE mingpt/main.py
