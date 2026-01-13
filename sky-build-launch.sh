@@ -20,6 +20,11 @@ uv pip install --prerelease=allow "azure-cli>=2.65.0"
 uv pip install ".[all]"
 uv run sky check
 npm --prefix sky/dashboard install && npm --prefix sky/dashboard run build
+
+# Fetch Verda Cloud availability
+uv run python -c "from sky.catalog.data_fetchers.fetch_verda import main; main()"
+
+# Run SkyPilot api server at http://127.0.0.1:46580
 uv run sky api stop
 uv run sky api start
 
@@ -28,4 +33,8 @@ if [[ "$USE_SPOT" == "1" ]] || [[ "$USE_SPOT" == "true" ]]; then
   EXTRA_ARGS="--use-spot"
 fi
 
+# Launch one SkyPilot cluster
 uv run sky launch --gpus ${GPU_TYPE:-B200}:${GPU_COUNT:-1} ${EXTRA_ARGS:-}
+
+# For running some job, execute this manually
+# cd sky && uv run sky exec CLUSTER_NAME ../train.yml
