@@ -4,9 +4,13 @@
 
 [SkyPilot](https://github.com/skypilot-org/skypilot) is an open-source framework for running AI and batch workloads across multiple cloud providers (AWS, GCP, Azure, Kubernetes and Verda Cloud). It provides a unified interface to deploy and manage workloads with automatic cost optimization, fault tolerance, and resource management.
 
-## Scripts
+## What is this repo
 
-### `sky-build-launch.sh`
+This repo makes it easy to run fork by checking out the repo and configuring it with Verda Cloud credentials in one go.
+
+### Scripts
+
+#### `sky-build-launch.sh`
 
 Builds and launches a SkyPilot job using upcoming Verda Cloud branch (`feat-verda-cloud` from `huksley/skypilot`).
 
@@ -30,7 +34,9 @@ Builds and launches a SkyPilot job using upcoming Verda Cloud branch (`feat-verd
 GPU_TYPE=A100 GPU_COUNT=2 USE_SPOT=1 ./sky-build-launch.sh
 ```
 
-### `sky-cleanup.sh`
+To shutdown skypilot cluster, use sky down <cluster-name>
+
+#### `sky-cleanup.sh`
 
 Cleans up all SkyPilot-related files and configurations.
 
@@ -50,3 +56,8 @@ Cleans up all SkyPilot-related files and configurations.
 - `uv` package manager installed
 - `npm` for building the dashboard
 - Verda Cloud credentials (will be prompted on first run)
+
+
+## Running manually
+
+After first run of `./sky-build-launch` go to the `sky` folder and run `uv run sky ...`
