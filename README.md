@@ -1,4 +1,4 @@
-# SkyRunner - SkyPilot Testing Scripts
+# SkyPilot + Verda Cloud Testing Scripts
 
 ## What is SkyPilot?
 
