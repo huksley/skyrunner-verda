@@ -68,3 +68,13 @@ Cleans up all SkyPilot-related files and configurations.
 ## Running manually
 
 After first run of `./sky-build-launch` go to the `sky` folder and run `uv run sky ...`
+
+## Submitting training jobs to the cluster
+
+Check the SkyPilot docs https://docs.skypilot.co/
+
+Run simple job:
+
+```
+cd sky && uv run sky exec <CLUSTER-NAME> ../train.yml
+```
