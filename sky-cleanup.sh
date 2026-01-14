@@ -1,8 +1,9 @@
 #!/bin/bash
+set -euo pipefail
 
 if [ -d sky ]; then
   echo "Stopping sky API"
-  (cd sky && uv run sky api stop)
+  (cd sky && uv run sky api stop || true)
   rm -Rf sky
 fi
 
@@ -12,3 +13,4 @@ if [ -d ${HOME}/.verda ]; then
 fi
 
 rm -Rf ${HOME}/.sky
+
