@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 if [ ! -d sky ]; then
   echo "Cloning SkyPilot repository [Verda Cloud branch]"
@@ -22,7 +22,7 @@ if [ ! -f ${HOME}/.verda/config.json ]; then
   echo "{\"client_id\": \"$client_id\", \"client_secret\": \"$client_secret\"}" > ${HOME}/.verda/config.json
 fi
 
-export UV_PYTHON=3.8
+export UV_PYTHON=3.9
 export VIRTUAL_ENV=.venv
 
 if [ -d .venv ]; then
@@ -49,6 +49,7 @@ uv run sky api stop || true
 uv run sky api start
 
 EXTRA_ARGS=""
+
 if [[ "$USE_SPOT" == "1" ]] || [[ "$USE_SPOT" == "true" ]]; then
   EXTRA_ARGS="--use-spot"
 fi
