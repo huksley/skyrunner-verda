@@ -12,7 +12,6 @@ Github pull requests in question:
 
 - **[Add Verda Cloud (formerly DataCrunch) provider](https://github.com/skypilot-org/skypilot/pull/8160)**
 - **[Add Verda cloud availability fetcher script](https://github.com/skypilot-org/skypilot/pull/8180)**
-- **[Add availability csv for Verda Cloud to skypilot-catalog](https://github.com/skypilot-org/skypilot-catalog/pull/166)**
 - **[Add availability periodic fetcher for Verda Cloud to skypilot-catalog](https://github.com/skypilot-org/skypilot-catalog/pull/165)**
 
 ### Scripts
