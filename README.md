@@ -42,6 +42,16 @@ GPU_TYPE=A100 GPU_COUNT=2 USE_SPOT=1 ./sky-build-launch.sh
 
 To shutdown skypilot cluster, use sky down <cluster-name>
 
+### Run training job
+
+Note, you might need to change GPU name in train.yml based on current availability.
+
+`(cd sky && sky exec <cluster-name> ../train.yml)`
+
+### Check availability
+
+`sky gpus list --infra verda` 
+
 #### `sky-cleanup.sh`
 
 Cleans up all SkyPilot-related files and configurations.
