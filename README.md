@@ -11,8 +11,8 @@ This repo makes it easy to run fork by checking out the repo and configuring it 
 Github pull requests in question:
 
 - **[Add Verda Cloud (formerly DataCrunch) provider](https://github.com/skypilot-org/skypilot/pull/8160)**
-- **[Add Verda cloud availability fetcher script](https://github.com/skypilot-org/skypilot/pull/8180)**
-- **[Add availability periodic fetcher for Verda Cloud to skypilot-catalog](https://github.com/skypilot-org/skypilot-catalog/pull/165)**
+- MERGED: **[Add Verda cloud availability fetcher script](https://github.com/skypilot-org/skypilot/pull/8180)**
+- MERGED: **[Add availability periodic fetcher for Verda Cloud to skypilot-catalog](https://github.com/skypilot-org/skypilot-catalog/pull/165)**
 
 ### Scripts
 
@@ -31,7 +31,7 @@ Builds and launches a SkyPilot job using upcoming Verda Cloud branch (`feat-verd
 - Launches a GPU job (default: 1x B200 GPU)
 
 **Environment Variables:**
-- `GPU_TYPE`: GPU type to use (default: `B200`)
+- `GPU_TYPE`: GPU type to use (default: `H100`)
 - `GPU_COUNT`: Number of GPUs (default: `1`)
 - `USE_SPOT`: Set to `1` to use spot instances
 
