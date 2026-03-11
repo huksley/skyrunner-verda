@@ -9,10 +9,6 @@ fi
 
 cd sky
 
-# Reverse LazyImport bug fix
-# curl -o LazyImport.patch https://gist.githubusercontent.com/huksley/aa5bf9420ab101e96294877fc8bcf4f9/raw/b3868efe7bd6a4cda7fa5ebab23406067089c597/LazyImport.patch
-# patch -p1 < LazyImport.patch
-
 if [ ! -f ${HOME}/.verda/config.json ]; then
   echo "Creating ${HOME}/.verda/config.json"
   mkdir -p ${HOME}/.verda
@@ -55,7 +51,7 @@ if [[ "$USE_SPOT" == "1" ]] || [[ "$USE_SPOT" == "true" ]]; then
 fi
 
 # Launch one SkyPilot cluster
-uv run sky launch --gpus ${GPU_TYPE:-B200}:${GPU_COUNT:-1} ${EXTRA_ARGS:-}
+uv run sky launch --gpus ${GPU_TYPE:-H100}:${GPU_COUNT:-1} ${EXTRA_ARGS:-}
 
 # For running some job, execute this manually
 # cd sky && uv run sky exec CLUSTER_NAME ../train.yml
