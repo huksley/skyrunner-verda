@@ -2,9 +2,9 @@
 set -eo pipefail
 
 if [ ! -d sky ]; then
-  echo "Cloning SkyPilot repository [Verda Cloud branch]"
-  git clone https://github.com/huksley/skypilot/ sky
-  (cd sky && git checkout feat-verda-cloud)
+  echo "Cloning SkyPilot repository]"
+  git clone https://github.com/skypilot-org/skypilot/ sky
+  (cd sky && git checkout master)
 fi
 
 cd sky
