@@ -6,19 +6,13 @@
 
 ## What is this repo
 
-This repo makes it easy to run fork by checking out the repo and configuring it with Verda Cloud credentials in one go.
-
-Github pull requests in question:
-
-- **[Add Verda Cloud (formerly DataCrunch) provider](https://github.com/skypilot-org/skypilot/pull/8160)**
-- MERGED: **[Add Verda cloud availability fetcher script](https://github.com/skypilot-org/skypilot/pull/8180)**
-- MERGED: **[Add availability periodic fetcher for Verda Cloud to skypilot-catalog](https://github.com/skypilot-org/skypilot-catalog/pull/165)**
+This repo makes it easy to run SkyPilot with Verda Cloud provider.
 
 ### Scripts
 
 #### `sky-build-launch.sh`
 
-Builds and launches a SkyPilot job using upcoming Verda Cloud branch (`feat-verda-cloud` from `huksley/skypilot`).
+Builds and launches a SkyPilot cluster using Verda Cloud provider.
 
 **What it does:**
 - Clones the SkyPilot repository and checks out your branch
@@ -37,6 +31,8 @@ Builds and launches a SkyPilot job using upcoming Verda Cloud branch (`feat-verd
 
 **Example:**
 ```bash
+./sky-build-launch.sh
+# Or specify params
 GPU_TYPE=A100 GPU_COUNT=2 USE_SPOT=1 ./sky-build-launch.sh
 ```
 
